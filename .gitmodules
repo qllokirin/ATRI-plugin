@@ -1,0 +1,4 @@
+[submodule "resources/MoeTTS"]
+	path = resources/MoeTTS
+	url = https://github.com/luoyily/MoeTTS.git
+	branch = cli
