@@ -33,7 +33,7 @@ windows不管之前装没装过，再下一次**python3.7**就行了，我放个
 
 这里借一张网图说明一下图中的√**一定要勾上**
 
-![](.\readme_\1.png)
+![image](https://github.com/70loKirin/ATRI-plugin/blob/main/readme_/1.png)
 
 # 安装
 
@@ -82,8 +82,6 @@ git clone --recurse-submodules https://github.com/70loKirin/ATRI-plugin.git ./pl
 # 功能说明
 
 发送**atri说xxx**则可返回指定语音，返回**较慢**，请耐心等待
-
-<video src=".\readme_\演示视频.mp4"></video>
 
 # 免责声明
 
