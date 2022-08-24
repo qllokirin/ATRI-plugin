@@ -35,6 +35,21 @@ windows不管之前装没装过，再下一次**python3.7**就行了，我放个
 
 ![image](https://github.com/70loKirin/ATRI-plugin/blob/main/readme_/1.png)
 
+# ffmpeg配置
+
+* [点我下载ffmpeg](https://wwp.lanzoub.com/ifhhC091vp3a)解压之后放在一个之后不会移动的目录下
+* 去`Yunzai-Bot\config\config\bot.yaml`里面填写路径
+
+示例：(请复制自己的路径进行配置)
+
+```
+# ffmpeg
+ffmpeg_path: D:\software\ffmpeg\bin\ffmpeg.exe
+ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
+```
+
+
+
 # 安装
 
 * 1.克隆项目+子模块更新
