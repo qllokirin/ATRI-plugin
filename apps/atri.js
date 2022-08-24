@@ -61,6 +61,7 @@ export class atri extends plugin{
         console.log(res.trans_result[0].dst)
         let tans = res.trans_result[0].dst
         console.log("正在生成语音，请稍等")
+        this.e.reply("请等等我~");
         let cm = `python ./plugins/ATRI-plugin/resources/MoeTTS/main.py -tt2ck ./plugins/ATRI-plugin/resources/MoeTTS/models/atri_v2_40000.pt -hgck ./plugins/ATRI-plugin/resources/MoeTTS/models/g_atri_hifigan_02510000.pt -hgc ./plugins/ATRI-plugin/resources/MoeTTS/models/config.json -i ${tans}. -o ./plugins/ATRI-plugin/resources/MoeTTS/output -p basic_cleaners`
         let ret = await this.execSync(cm)
         await this.e.reply(segment.record('./plugins/ATRI-plugin/resources/MoeTTS/output/output_1.wav'))

@@ -54,13 +54,20 @@ ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
 
 * 1.克隆项目+子模块更新
 
-```
-git clone --recurse-submodules https://github.com/70loKirin/ATRI-plugin.git ./plugins/ATRI-plugin/
-```
+因为是子模块更新用git没有代理大概率克隆不下来（插件更新的时候也会一直卡住）
+
+所以这里建议使用压缩包
+
+> 链接：https://pan.baidu.com/s/1Hk2-qZxTnfMYZSGNGYR7PA 
+> 提取码：atri
+
+~~（好奇怪啊 GitHub代码用网盘传）~~
+
+~~git clone --recurse-submodules https://github.com/70loKirin/ATRI-plugin.git ./plugins/ATRI-plugin/~~
 
 * 2.配置MoeTTS项目
 
-  * 下载models
+  * 下载models（**如果使用的是压缩包就不用做这步**）
 
     > 链接：https://pan.baidu.com/s/1sbKNoNJni1boOtoo2AnZ1A 
     > 提取码：atri
@@ -75,9 +82,10 @@ git clone --recurse-submodules https://github.com/70loKirin/ATRI-plugin.git ./pl
 
   * 安装依赖
 
+    **一定要确认这步没有error报错！！！！！！！**有问题尝试自行百度
+  
     ```
-    pip install -r requirements.txt -i https://pypi
-    .tuna.tsinghua.edu.cn/simple/
+    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
     ```
   
   * 测试
