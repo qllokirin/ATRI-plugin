@@ -48,7 +48,7 @@ ffmpeg_path: D:\software\ffmpeg\bin\ffmpeg.exe
 ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
 ```
 
-
+> linux可以输入`whereis ffmpeg`和`whereis ffprobe`找到ffmpeg的位置
 
 # 安装
 
@@ -73,18 +73,19 @@ git clone --recurse-submodules https://github.com/70loKirin/ATRI-plugin.git ./pl
     cd plugins/ATRI-plugin/resources/MoeTTS/
     ```
 
-  * 安装依赖（可能会花**很长时间**，请耐心等待以及确保**没有报错**）
+  * 安装依赖
 
     ```
-    pip install -r requirements.txt
+    pip install -r requirements.txt -i https://pypi
+    .tuna.tsinghua.edu.cn/simple/
     ```
-
+  
   * 测试
-
+  
     ```
     python main.py -tt2ck ./models/atri_v2_40000.pt -hgck ./models/g_atri_hifigan_02510000.pt -hgc ./models/config.json -i 私は高性能です. -o output -p basic_cleaners
     ```
-
+  
     如果在`Yunzai-Bot\plugins\ATRI-plugin\resources\MoeTTS\output`文件夹下出现`output_1.wav`则说明配置成功
 
 # 配置百度翻译api
