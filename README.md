@@ -52,22 +52,27 @@ ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
 
 # 安装
 
-* 1.克隆项目+子模块更新
+* 1.克隆代码
 
-因为是子模块更新用git没有代理大概率克隆不下来（插件更新的时候也会一直卡住）
+```
+git clone https://github.com/70loKirin/ATRI-plugin.git ./plugins/ATRI-plugin/
+```
 
-所以这里建议使用压缩包
+* 2.克隆MoeTTS项目代码
 
-> 链接：https://pan.baidu.com/s/1Hk2-qZxTnfMYZSGNGYR7PA 
-> 提取码：atri
+```
+git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/resources/MoeTTS
+```
 
-~~（好奇怪啊 GitHub代码用网盘传）~~
-
-~~git clone --recurse-submodules https://github.com/70loKirin/ATRI-plugin.git ./plugins/ATRI-plugin/~~
+> 如果后续 #全部更新 卡住，则删掉两个.git文件夹就行（意思就是这个插件不再更新）
+>
+> rm -rf ./plugins/ATRI-plugin/.git
+>
+> rm -rf ./plugins/ATRI-plugin/resources/MoeTTS/.git
 
 * 2.配置MoeTTS项目
 
-  * 下载models（**如果使用的是压缩包就不用做这步**）
+  * 下载models
 
     > 链接：https://pan.baidu.com/s/1sbKNoNJni1boOtoo2AnZ1A 
     > 提取码：atri
@@ -83,17 +88,17 @@ ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
   * 安装依赖
 
     **一定要确认这步没有error报错！！！！！！！**有问题尝试自行百度
-  
+
     ```
     pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
     ```
-  
+
   * 测试
-  
+
     ```
     python main.py -tt2ck ./models/atri_v2_40000.pt -hgck ./models/g_atri_hifigan_02510000.pt -hgc ./models/config.json -i 私は高性能です. -o output -p basic_cleaners
     ```
-  
+
     如果在`Yunzai-Bot\plugins\ATRI-plugin\resources\MoeTTS\output`文件夹下出现`output_1.wav`则说明配置成功
 
 # 配置百度翻译api
