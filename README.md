@@ -24,7 +24,7 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
 # python环境
 
-我测试3.6、3.7、3.9，只有python3.7.3正常运行了，其他版本大家可以自行测试其他python版本
+我测试3.6、3.8、3.9均未测试通过，只有python3.7.3正常运行了
 
 windows不管之前装没装过，再下一次**python3.7**就行了，我放个链接
 
@@ -64,11 +64,10 @@ git clone https://github.com/70loKirin/ATRI-plugin.git ./plugins/ATRI-plugin/
 git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/resources/MoeTTS
 ```
 
-> 如果后续 #全部更新 卡住，则删掉两个.git文件夹就行（意思就是这个插件不再更新）
+> 如果后续 #全部更新 卡住，则删掉.git文件夹就行（意思就是这个插件不再更新）
 >
 > rm -rf ./plugins/ATRI-plugin/.git
 >
-> rm -rf ./plugins/ATRI-plugin/resources/MoeTTS/.git
 
 * 2.配置MoeTTS项目
 
@@ -87,7 +86,7 @@ git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/res
 
   * 安装依赖
 
-    **一定要确认这步没有error报错！！！！！！！**有问题尝试自行百度
+    **一定要确认这步没有error报错**！！！！！！！有问题尝试自行百度
 
     ```
     pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
