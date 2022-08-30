@@ -24,16 +24,44 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
 # python环境
 
-我测试3.6、3.8、3.9均未测试通过，只有python3.7.3正常运行了
+* 1.安装
 
-windows不管之前装没装过，再下一次**python3.7**就行了，我放个链接
+  我测试3.6、3.8、3.9均未测试通过，只有python3.7正常运行了
 
-> https://wwp.lanzoub.com/ioagG0a3xufc
-> 密码:atri
+  * win用户
 
-这里借一张网图说明一下图中的√**一定要勾上**
+    windows不管之前装没装过，再下一次**python3.7**就行了，我放个python3.7.3的链接
 
-![image](https://github.com/70loKirin/ATRI-plugin/blob/main/readme_/1.png)
+    > https://wwp.lanzoub.com/ioagG0a3xufc
+    > 密码:atri
+
+    这里借一张网图说明一下图中的√**一定要勾上**
+
+    ![image](https://github.com/70loKirin/ATRI-plugin/blob/main/readme_/1.png)
+
+  * centos用户
+
+    python版本切换到3.7后，需要将yum使用的python再次连接到python2.7
+
+    >  方法：去`/usr/bin/yum`和`/usr/libexec/urlgrabber-ext-down`把第一行的python改成python2或者python2.7
+
+    然后安装一个包
+
+    ```
+    yum install libsndfile
+    ```
+
+* 2.**检查python版本**！！！！！！(**非常重要**)
+
+  输入`python -V`和`pip -V`
+
+  输出应该是`Python 3.7.3`和`xxxxx (python 3.7)`
+
+* 3.升级pip
+
+  ```
+  python -m pip install --upgrade pip
+  ```
 
 # ffmpeg配置
 
@@ -48,7 +76,9 @@ ffmpeg_path: D:\software\ffmpeg\bin\ffmpeg.exe
 ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
 ```
 
-> linux可以输入`whereis ffmpeg`和`whereis ffprobe`找到ffmpeg的位置
+> 配置过环境变量的**win用户**建议填写和环境变量路径一样的路径
+>
+> **linux用户**可以输入`whereis ffmpeg`和`whereis ffprobe`找到ffmpeg的位置
 
 # 安装
 
@@ -115,3 +145,11 @@ git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/res
 
 1. 功能仅限内部交流与小范围使用，请勿将Yunzai-Bot及ATRI-plugin用于以盈利为目的的场景
 3. 图片与其他素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除
+
+# 如有问题
+
+可以在自行百度or提出issue或查找相关issue
+
+无法解决可以联系我 QQ:2456590695
+
+喜欢的话就点个star吧
