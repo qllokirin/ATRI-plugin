@@ -8,7 +8,11 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
 **本人萌新，很多都是cv（~~cvyyds~~）**
 
-**所以此插件配置会有亿点点麻烦，爱折腾的话速来**
+**此插件配置会有亿点点麻烦，爱折腾的话速来**
+
+**此插件配置会有亿点点麻烦，爱折腾的话速来**
+
+**此插件配置会有亿点点麻烦，爱折腾的话速来**
 
 返回需要十多秒时间，请耐心等待
 
@@ -28,7 +32,7 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
   我测试3.6、3.8、3.9均未测试通过，只有python3.7正常运行了
 
-  * win用户
+  * **win用户**
 
     windows不管之前装没装过，再下一次**python3.7**就行了，我放个python3.7.3的链接
 
@@ -37,9 +41,11 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
     这里借一张网图说明一下图中的√**一定要勾上**
 
-    ![image](https://github.com/70loKirin/ATRI-plugin/blob/main/readme_/1.png)
+    ![image](https://docimg2.docs.qq.com/image/bQeXgYp4QL88YoxSB-vgug.png?w=738&h=450)
 
-  * centos用户
+    > 如果是云服务器请需要再安装一个部件https://aka.ms/vs/16/release/vc_redist.x64.exe
+
+  * **centos用户**
 
     python版本切换到3.7后，需要将yum使用的python再次连接到python2.7
 
@@ -65,10 +71,14 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
 # ffmpeg配置
 
-* [点我下载ffmpeg](https://wwp.lanzoub.com/ifhhC091vp3a)解压之后放在一个之后不会移动的目录下
+* Windows用户[点我下载ffmpeg](https://wwp.lanzoub.com/ifhhC091vp3a)解压之后放在一个之后不会移动的目录下(**路径中无中文无空格**)
+
+  > **windows2012**请下载：https://pan.baidu.com/s/1VeCe-1z9kKHhH9KD0QRHYA?pwd=atri 
+  > 提取码：atri
+
 * 去`Yunzai-Bot\config\config\bot.yaml`里面填写路径
 
-示例：(请复制自己的路径进行配置)
+示例：(请复制自己的路径进行配置)**冒号后面有一个空格**！！！！！
 
 ```
 # ffmpeg
@@ -78,7 +88,7 @@ ffprobe_path: D:\software\ffmpeg\bin\ffprobe.exe
 
 > 配置过环境变量的**win用户**建议填写和环境变量路径一样的路径
 >
-> **linux用户**可以输入`whereis ffmpeg`和`whereis ffprobe`找到ffmpeg的位置
+> **linux用户**推荐原码编译后输入`whereis ffmpeg`和`whereis ffprobe`找到ffmpeg的位置
 
 # 安装
 
@@ -94,12 +104,12 @@ git clone https://github.com/70loKirin/ATRI-plugin.git ./plugins/ATRI-plugin/
 git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/resources/MoeTTS
 ```
 
-> 如果后续 #全部更新 卡住，则删掉.git文件夹就行（意思就是这个插件不再更新）
+> 如果后续 #全部更新 卡住，则删掉atri-plugin文件夹下的.git文件夹就行（意思就是这个插件不再更新）
 >
-> rm -rf ./plugins/ATRI-plugin/.git
+> 删除方法：rm -rf ./plugins/ATRI-plugin/.git（云崽根目录运行）
 >
 
-* 2.配置MoeTTS项目
+* 3.配置MoeTTS项目
 
   * 下载models
 
@@ -132,10 +142,16 @@ git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/res
 
 # 配置百度翻译api
 
-* 进入[官网](http://api.fanyi.baidu.com/manage/developer)注册登陆点击**通用翻译**
-* 点击**立即使用**
+* 进入[官网](http://api.fanyi.baidu.com/manage/developer)注册登陆
+* 进入[通用翻译](http://api.fanyi.baidu.com/product/11)点击**立即使用**
 * 再次进入[官网](http://api.fanyi.baidu.com/manage/developer)查看**APP ID**(appid)和**密钥**(key)
 * 填到`Yunzai-Bot\plugins\ATRI-plugin\apps\atri.js`的50和51行
+
+> 用记事本编辑容易出现缩进问题不易察觉，推荐使用nodepad或者vscode
+>
+> nodepad下载地址https://wwp.lanzoub.com/iimhr0beb9ef  密码:atri
+>
+> TODO：换成yaml配置文件或者使用免费api
 
 # 功能说明
 
@@ -152,4 +168,16 @@ git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/res
 
 无法解决可以联系我 QQ:2456590695
 
+> Windows云服务器可以帮忙配置（啊，的确有点难配置），你需要做的就是把上面能下载的东西都下载下来放到桌面，然后联系我
+>
+> 你问我为什么不帮忙配置Linux？Linux技术佬就自己配置一下啦
+
 喜欢的话就点个star吧
+
+# 关于python环境
+
+此插件只能用python3.7，而**py插件**需要python3.8，一般操作是无法兼容了   
+
+但我的机器人是两个插件都安装了都可以使用
+
+这里分享一下的我的思路（ubuntu系统）：我是先安装atri，搭建好之后安装python3.8，把python3.8软链接到`python3.8`，`python`的软链接还是指向python3.7，之后需要运行`python install`我就输入`python3.8 install`，其余一样
