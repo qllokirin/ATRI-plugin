@@ -16,6 +16,18 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 
 返回需要十多秒时间，请耐心等待
 
+# 更新
+
+### **v2.0** 
+
+删除百度翻译api，使用其他api接口，无需再配置
+
+**检索已经生成过的语音，有的话会直接发送**
+
+> 这次更新会与**老版本**造成冲突，若在2022.9.11**之前安装**的用户需在云崽根目录依次运行`cd plugins/ATRI-plugin/`和`git checkout -- ./apps/atri.js`
+>
+> 再次使用`#全部更新`即可
+
 ---
 
 # 强调
@@ -66,7 +78,7 @@ ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插�
 * 3.升级pip
 
   ```
-  python -m pip install --upgrade pip
+  python -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/
   ```
 
 # ffmpeg配置
@@ -139,19 +151,6 @@ git clone -b cli https://github.com/luoyily/MoeTTS.git ./plugins/ATRI-plugin/res
     ```
 
     如果在`Yunzai-Bot\plugins\ATRI-plugin\resources\MoeTTS\output`文件夹下出现`output_1.wav`则说明配置成功
-
-# 配置百度翻译api
-
-* 进入[官网](http://api.fanyi.baidu.com/manage/developer)注册登陆
-* 进入[通用翻译](http://api.fanyi.baidu.com/product/11)点击**立即使用**
-* 再次进入[官网](http://api.fanyi.baidu.com/manage/developer)查看**APP ID**(appid)和**密钥**(key)
-* 填到`Yunzai-Bot\plugins\ATRI-plugin\apps\atri.js`的50和51行
-
-> 用记事本编辑容易出现缩进问题不易察觉，推荐使用nodepad或者vscode
->
-> nodepad下载地址https://wwp.lanzoub.com/iimhr0beb9ef  密码:atri
->
-> TODO：换成yaml配置文件或者使用免费api
 
 # 功能说明
 
