@@ -1,5 +1,7 @@
 # ATRI-plugin
 
+# 为方便使用，建议使用[gitee仓库](https://gitee.com/magical_modoka/ATRI-plugin)
+
 ATRI-plugin是一个可以合成atri（亚托莉）声音并发送语音的插件
 
 > 配合[v3云崽](https://github.com/Le-niao/Yunzai-Bot)食用
