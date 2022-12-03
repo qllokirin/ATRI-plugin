@@ -6,6 +6,7 @@ const require = createRequire(import.meta.url)
 const { exec, execSync } = require('child_process')
 const _path = process.cwd()
 var fs = require('fs');
+import uploadRecord from '../uploadRecord.js'
 //返回时间大约在10多秒左右
 //v2.0新增 使用免费翻译api 已经生成的语音会直接发送 无需等待
 //效果：atri说xxx 会就发语音
@@ -50,7 +51,8 @@ export class atri extends plugin {
         for (var i = 0; i < name.length; i++) {
             if (msg == name[i]) {
                 console.log("有已经生成的语音，直接发送")
-                await this.e.reply(segment.record(`./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/output_1.wav`))
+                // await this.e.reply(segment.record(`./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/output_1.wav`))
+                await this.e.reply(await uploadRecord(`./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/output_1.wav`, 0, false))
                 return true
             }
         }
@@ -61,6 +63,7 @@ export class atri extends plugin {
         let res = await response.json()     //结果json字符串转对象
         console.log(res)
         let tans = res.data
+        tans = tans.replaceAll(" ", "")
         console.log("正在生成语音，请稍等")
         this.e.reply("请等等我~");
         let cm = `python ./plugins/ATRI-plugin/resources/MoeTTS/main.py -tt2ck ./plugins/ATRI-plugin/resources/MoeTTS/models/atri_v2_40000.pt -hgck ./plugins/ATRI-plugin/resources/MoeTTS/models/g_atri_hifigan_02510000.pt -hgc ./plugins/ATRI-plugin/resources/MoeTTS/models/config.json -i ${tans}. -o ./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/ -p basic_cleaners`
@@ -74,7 +77,8 @@ export class atri extends plugin {
             this.e.reply("语音生成失败,请到控制台查看报错信息")
             return false
         }
-        await this.e.reply(segment.record(`./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/output_1.wav`))
+        // await this.e.reply(segment.record(`./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/output_1.wav`))
+        await this.e.reply(await uploadRecord(`./plugins/ATRI-plugin/resources/MoeTTS/output/${msg}/output_1.wav`, 0, false))
         return true
     }
 }
